@@ -1,2 +1,14 @@
 ---
 # tasks file for budget
+- name: Télécharger image httpd
+  containers.podman.podman_image:
+    name: docker.io/library/httpd
+    state: present
+
+- name: Créer et démarrer conteneur httpd
+  containers.podman.podman_container:
+    name: httpd_container
+    image: docker.io/library/httpd
+    state: started
+    ports:
+      - "8080:80"
