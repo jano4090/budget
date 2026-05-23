@@ -1,0 +1,7 @@
+---
+- name: Déployer conteneur httpd
+  hosts: fedora
+  become: yes
+
+  roles:
+    - httpd_container
