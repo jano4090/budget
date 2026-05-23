@@ -4,4 +4,4 @@
   become: yes
 
   roles:
-    - httpd-container
+    - httpd_container
